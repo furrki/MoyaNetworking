@@ -1,3 +1,3 @@
-struct MoyaNetworking {
-    var text = "Hello, World!"
+class MoyaNetworkingConfiguration {
+    public static var configuration: MoyaNetworkingConfiguration = MoyaNetworkingConfiguration()
 }
