@@ -10,13 +10,9 @@ import Foundation
 public protocol APIEnvironment {
     
     static var baseUrl: URL { get }
-    
-    /// Job seeker client id
     static var jsClientId: String { get }
-    
-    /// Employer client id
     static var empClientId: String { get }
-    
+    static var accessTokenBearer: String { get }
 }
 
 extension APIEnvironment {
@@ -29,7 +25,7 @@ extension APIEnvironment {
         var headers = baseHeaders
         
         headers["Content-Type"] = "application/json"
-        headers["Authorization"] = "Access \(token)"
+        headers["Authorization"] = "\(accessTokenBearer) \(token)"
         
         return headers
     }

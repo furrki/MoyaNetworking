@@ -13,11 +13,7 @@ public protocol APIType {
 }
 
 public extension APIType {
-//    static func getProvider<E, S: Service<E>>() -> MoyaProvider<Service<E>> {
-//        return MoyaProvider<S<E>>()
-//    }
-//
-    static var authenticationProvider: MoyaProvider<AuthenticationService<Environment>> {
-        return MoyaProvider<AuthenticationService<Environment>>()
+    static func getProvider<S: Service>(service: S) -> MoyaProvider<S> {
+        return MoyaProvider<S>()
     }
 }
