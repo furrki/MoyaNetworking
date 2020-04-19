@@ -13,7 +13,7 @@ public protocol ResponseTargetType {
 
 public struct ResponseType {
     var type: Decodable.Type?
-    init(type: Decodable.Type?) {
+    public init(type: Decodable.Type?) {
         self.type = type
     }
 }

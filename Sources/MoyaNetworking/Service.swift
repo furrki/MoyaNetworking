@@ -11,10 +11,15 @@ import Moya
 public protocol Service {
     associatedtype E: APIEnvironment
     
-    var baseURL: URL { get }
     var path: String { get }
     var method: Moya.Method { get }
     var task: Task { get }
     var headers: [String: String]? { get }
     var responseType: ResponseType { get }
+}
+
+extension Service {
+    static var baseURL: URL {
+        return E.baseUrl
+    }
 }

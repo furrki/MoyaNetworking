@@ -12,8 +12,3 @@ public protocol APIType {
     associatedtype Environment: APIEnvironment
 }
 
-public extension APIType {
-    static func getProvider<S: Service>(service: S) -> MoyaProvider<S> {
-        return MoyaProvider<S>()
-    }
-}

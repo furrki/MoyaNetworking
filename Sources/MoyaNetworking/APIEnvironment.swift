@@ -8,7 +8,6 @@
 import Foundation
 
 public protocol APIEnvironment {
-    
     static var baseUrl: URL { get }
     static var jsClientId: String { get }
     static var empClientId: String { get }
@@ -17,11 +16,11 @@ public protocol APIEnvironment {
 
 extension APIEnvironment {
     
-    static var baseHeaders: [String: String] {
+    public static var baseHeaders: [String: String] {
         return ["Content-Type": "application/json"]
     }
     
-    static func authHeaders(for token: String) -> [String: String] {
+    public static func authHeaders(for token: String) -> [String: String] {
         var headers = baseHeaders
         
         headers["Content-Type"] = "application/json"
